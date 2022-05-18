@@ -26,6 +26,9 @@ import {
 import { Add, Remove } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
 import { publicRequest } from "../../utils/requestMethods";
+import { addProduct } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
+
 const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
@@ -33,6 +36,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -50,6 +54,13 @@ const Product = () => {
     } else {
       setQuantity(quantity + 1);
     }
+  };
+
+  const handleClick = () => {
+    //update cart
+    dispatch(
+      addProduct({ ...product, quantity, color, size })
+    );
   };
   return (
     <Container>
@@ -85,7 +96,7 @@ const Product = () => {
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity("wiecej")} />
             </AmountContainer>
-            <Button>Dodaj do koszyka</Button>
+            <Button onClick={handleClick}>Dodaj do koszyka</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
