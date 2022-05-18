@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import Announcement from "../../components/Announcement";
 import Footer from "../../components/Footer";
+import { useSelector } from "react-redux";
 import {
   Container,
   Wrapper,
@@ -35,6 +36,8 @@ import {
 import { Add, Remove } from "@material-ui/icons";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <Container>
       <Navbar />
@@ -51,63 +54,40 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetail>
-                <Image src="https://images.pexels.com/photos/10854224/pexels-photo-10854224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                <Details>
-                  <ProductName>
-                    <b>Oglądasz:</b>Spodnie dresowe basic
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b>12561261978
-                  </ProductId>
-                  <ProductColor bgc="black" />
-                  <ProductSize>
-                    <b>Rozmiar:</b> 42
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>3</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>99zl</ProductPrice>
-              </PriceDetail>
-            </Product>
+            {cart.products.map((product) => (
+              <Product>
+                <ProductDetail>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Oglądasz:</b>{product.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>ID:</b>{product._id}
+                    </ProductId>
+                    <ProductColor bgc={product.color} />
+                    <ProductSize>
+                      <b>Rozmiar:</b> {product.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>{product.price*product.quantity}zl</ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
             <Line />
-            <Product>
-              <ProductDetail>
-                <Image src="https://images.pexels.com/photos/10854224/pexels-photo-10854224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                <Details>
-                  <ProductName>
-                    <b>Oglądasz:</b>Spodnie dresowe basic
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b>12561261978
-                  </ProductId>
-                  <ProductColor bgc="black" />
-                  <ProductSize>
-                    <b>Rozmiar:</b> 42
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>3</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>99zl</ProductPrice>
-              </PriceDetail>
-            </Product>
           </Info>
           <Summary>
             <SummaryTitle>Podsumowanie zamówienia:</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Wartość zamówienia:</SummaryItemText>
-              <SummaryItemPrice>150 zl</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} zl</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Przesyłka</SummaryItemText>
@@ -115,11 +95,11 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Kod promocyjny</SummaryItemText>
-              <SummaryItemPrice>-10 zl</SummaryItemPrice>
+              <SummaryItemPrice>-12 zl</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="price">
               <SummaryItemText>Do zapłaty:</SummaryItemText>
-              <SummaryItemPrice>152 zl</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} zl</SummaryItemPrice>
             </SummaryItem>
             <Button>Realizuj zamówienie</Button>
           </Summary>
