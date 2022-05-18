@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
         const inputPassword = req.body.password;
         
         originalPassword != inputPassword && 
-            res.status(401).json("Niepoprawne hasło");
+            res.status(401).json("Niepoprawne haslo");
 
         const accessToken = jwt.sign(
         {

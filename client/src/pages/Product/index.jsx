@@ -25,59 +25,65 @@ import {
 } from "./Product";
 import { Add, Remove } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
+import { publicRequest } from "../../utils/requestMethods";
 const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  // const [product, setProduct] = useState({});
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
 
-  // useEffect(()=> {
-  //   const getProduct = async () => {
-  //     try{
-  //       const res = axios.
-  //     }catch{}
-  //   }
-  // },[id])
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "mniej") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Bluza w stylu basic</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-            quisquam consectetur id exercitationem quis, repudiandae labore,
-            culpa qui, aspernatur debitis rerum! Aliquam ad expedita doloribus?
-            Atque ex quis nihil assumenda!
-          </Desc>
-          <Price>120 zl</Price>
+          <Title>{product.title}</Title>
+          <Desc>{product.desc}</Desc>
+          <Price>{product.price} zl</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Kolor</FilterTitle>
-              <FilterColor color="czarny" />
-              <FilterColor color="biały" />
-              <FilterColor color="czerwony" />
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Rozmiar</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
-                <FilterSizeOption>XXL</FilterSizeOption>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={() => handleQuantity("mniej")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={() => handleQuantity("wiecej")} />
             </AmountContainer>
             <Button>Dodaj do koszyka</Button>
           </AddContainer>
