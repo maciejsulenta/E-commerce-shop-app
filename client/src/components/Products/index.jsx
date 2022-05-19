@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { products } from "../../utils/data/data";
 import ProductItem from "../ProductItem";
 import { Container } from "./Products";
 import axios from "axios";

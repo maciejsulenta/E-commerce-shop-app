@@ -11,6 +11,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import SuccessPayment from "./pages/SuccessPayment";
 
 const App = () => {
   const user = true;
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/register" element={user ? <Navigate to="/" /> : <Register/>} />
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/success" element={<SuccessPayment />} />
         </Routes>
       </Router>
     </>
