@@ -42,18 +42,18 @@ export default function Product() {
 
   const months = useMemo(
     () => [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Agu",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
+      "Styczeń",
+      "Luty",
+      "Marzec",
+      "Kwiecień",
+      "Maj",
+      "Czerwiec",
+      "Lipiec",
+      "Sierpień",
+      "Wrzesień",
+      "Październik",
+      "Listopad",
+      "Grudzień",
     ],
     []
   );
@@ -87,7 +87,7 @@ export default function Product() {
       </TitleWrap>
       <Top>
         <TopLeft>
-          <Chart data={pStats} dataKey="Sales" title="Sales Performance" />
+          <Chart data={pStats} dataKey="Sales" title="Sprzedaże" />
         </TopLeft>
         <TopRight>
           <ProductInfo>

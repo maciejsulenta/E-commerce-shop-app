@@ -15,6 +15,8 @@ import {
   AttachMoney,
   MailOutline,
   DynamicFeed,
+  PersonAdd,
+  CreateNewFolder,
 } from "@material-ui/icons";
 
 export default function Sidebar() {
@@ -46,10 +48,22 @@ export default function Sidebar() {
                 Użytkownicy
               </ListItem>
             </LinkS>
+            <LinkS to="/newUser">
+              <ListItem>
+                <PersonAdd />
+                Stwórz użytkownika
+              </ListItem>
+            </LinkS>
             <LinkS to="/products">
               <ListItem>
                 <Storefront />
                 Produkty
+              </ListItem>
+            </LinkS>
+            <LinkS to="/newProduct">
+              <ListItem>
+                <CreateNewFolder />
+                Stwórz produkt
               </ListItem>
             </LinkS>
             <LinkS to="/admin">

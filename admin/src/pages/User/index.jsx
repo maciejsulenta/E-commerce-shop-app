@@ -40,7 +40,6 @@ import {
 export default function User() {
   const location = useLocation();
   const userId = location.pathname.split("/")[2];
-  const [userStats, setUserStats] = useState([]);
 
   const user = useSelector((state) =>
     state.user.users.find((user) => user._id === userId)
@@ -67,7 +66,7 @@ export default function User() {
             <ShowTitle>Dane szczegółowe</ShowTitle>
             <InfoWrap>
               <PermIdentity />
-              <InfoTitle>-------</InfoTitle>
+              <InfoTitle>{user.name}</InfoTitle>
             </InfoWrap>
             <InfoWrap>
               <CalendarToday />
@@ -76,7 +75,7 @@ export default function User() {
             <ShowTitle>Dane kontaktowe</ShowTitle>
             <InfoWrap>
               <PhoneAndroid />
-              <InfoTitle>--------</InfoTitle>
+              <InfoTitle>{user.phone}</InfoTitle>
             </InfoWrap>
             <InfoWrap>
               <MailOutline />
@@ -84,12 +83,12 @@ export default function User() {
             </InfoWrap>
             <InfoWrap>
               <LocationSearching />
-              <InfoTitle>-------</InfoTitle>
+              <InfoTitle>{user.address}</InfoTitle>
             </InfoWrap>
           </Bottom>
         </UserShow>
         <UpdateWrap>
-          <UpdateTitle>Edytuj</UpdateTitle>
+          <UpdateTitle>Zobacz</UpdateTitle>
           <Form>
             <Left>
               <Item>
@@ -98,7 +97,7 @@ export default function User() {
               </Item>
               <Item>
                 <Label>Imię i nazwisko</Label>
-                <Input type="text" placeholder="-------" />
+                <Input type="text" placeholder={user.name} />
               </Item>
               <Item>
                 <Label>Email</Label>
@@ -106,11 +105,11 @@ export default function User() {
               </Item>
               <Item>
                 <Label>Numer telefonu</Label>
-                <Input type="text" placeholder="-------" />
+                <Input type="text" placeholder={user.phone} />
               </Item>
               <Item>
                 <Label>Adres zamieszkania</Label>
-                <Input type="text" placeholder="-------" />
+                <Input type="text" placeholder={user.address} />
               </Item>
             </Left>
             <Right>

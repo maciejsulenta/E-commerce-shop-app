@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
 `;
 export const Item = styled.div`
   flex: 1;
@@ -13,6 +14,7 @@ export const Item = styled.div`
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  background-color: #efeeef;
 `;
 export const Title = styled.h2`
   font-size: 20px;
@@ -41,8 +43,8 @@ export const Sub = styled.span`
   color: gray;
 `;
 export const ArrowGreen = styled(ArrowUpward)`
-color: green;
-`
+  color: green;
+`;
 export const ArrowRed = styled(ArrowDownward)`
-color: red;
-`
+  color: red;
+`;

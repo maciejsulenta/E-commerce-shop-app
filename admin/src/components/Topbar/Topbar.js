@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 50px;
-  background-color: white;
+  height: 60px;
+  background-color: #efeeef;
   position: sticky;
-  top: 0;
+  top: 0px;
   z-index: 999;
+  border-bottom: 3px solid #333;
 `;
 export const Wrapper = styled.div`
   height: 100%;
@@ -19,7 +20,7 @@ export const Left = styled.div``;
 export const Logo = styled.span`
   font-weight: bold;
   font-size: 30px;
-  color: darkblue;
+  color: cadetblue;
   cursor: pointer;
 `;
 export const Right = styled.div`
