@@ -1,5 +1,6 @@
 import { Visibility } from "@material-ui/icons";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { userRequest } from "../../requestMethods";
 import {
   Container,
@@ -38,10 +39,9 @@ export default function WidgetSm() {
             <UserWrap>
               <User>{user.username}</User>
             </UserWrap>
-            <Button>
-              <Visibility />
-              Zobacz
-            </Button>
+            <Link style={{ textDecoration: "none" }} to={"/user/" + user._id}>
+              <Button>Zobacz</Button>
+            </Link>
           </ListItem>
         ))}
       </List>

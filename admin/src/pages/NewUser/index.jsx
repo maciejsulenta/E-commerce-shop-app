@@ -103,7 +103,12 @@ export default function NewUser() {
         </Item>
         <Item>
           <Label>Imię i nazwisko</Label>
-          <Input type="text" placeholder="Imię i nazwisko" />
+          <Input
+            name="name"
+            type="text"
+            placeholder="Imię i nazwisko"
+            onChange={handleChange}
+          />
         </Item>
         <Item>
           <Label>Email</Label>
@@ -125,29 +130,21 @@ export default function NewUser() {
         </Item>
         <Item>
           <Label>Numer kontaktowy</Label>
-          <Input type="text" placeholder="+48 123 456 78" />
+          <Input
+            name="phone"
+            type="text"
+            placeholder="+48 123 456 78"
+            onChange={handleChange}
+          />
         </Item>
         <Item>
           <Label>Adres zamieszkania</Label>
-          <Input type="text" placeholder="Adres zamieszkania" />
-        </Item>
-        <Item>
-          <Label>Płeć</Label>
-          <Gender>
-            <Input type="radio" name="gender" id="male" value="male" />
-            <Label htmlFor="male">Mężczyzna</Label>
-            <Input type="radio" name="gender" id="female" value="female" />
-            <Label htmlFor="female">Kobieta</Label>
-            <Input type="radio" name="gender" id="other" value="other" />
-            <Label htmlFor="other">Inna</Label>
-          </Gender>
-        </Item>
-        <Item>
-          <Label>Aktywna</Label>
-          <Select name="active" id="active">
-            <Option value="yes">Tak</Option>
-            <Option value="no">Nie</Option>
-          </Select>
+          <Input
+            name="address"
+            type="text"
+            placeholder="Adres zamieszkania"
+            onChange={handleChange}
+          />
         </Item>
         <Button onClick={handleClick}>Stwórz użytkownika</Button>
       </Form>
