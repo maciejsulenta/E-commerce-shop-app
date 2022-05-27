@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Container, User, UserImage, Button } from "./UserList";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "../../redux/apiCalls";
+import { getUsers, deleteUser } from "../../redux/apiCalls";
 
 export default function UserList() {
   // const [data, setData] = useState(userRows);
@@ -17,9 +17,9 @@ export default function UserList() {
     getUsers(dispatch);
   }, [dispatch]);
 
-  // const handleDelete = (id) => {
-  //   deleteUser(id, dispatch);
-  // };
+  const handleDelete = (id) => {
+    deleteUser(id, dispatch);
+  };
 
   const columns = [
     { field: "_id", headerName: "ID", width: 220 },
@@ -52,7 +52,7 @@ export default function UserList() {
             </Link>
             <DeleteOutline
               style={{ color: "red", cursor: "pointer" }}
-              // onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
             />
           </>
         );

@@ -20,6 +20,15 @@ import {
   getUserStart,
   getUserSuccess,
   getUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  deleteUserFailure,
+  updateUserStart,
+  updateUserSuccess,
+  updateUserFailure,
+  addUserStart,
+  addUserSuccess,
+  addUserFailure,
 } from "./userSlice";
 
 export const login = async (dispatch, user) => {
@@ -32,6 +41,7 @@ export const login = async (dispatch, user) => {
   }
 };
 
+//products
 export const getProducts = async (dispatch) => {
   dispatch(getProductStart());
   try {
@@ -71,6 +81,7 @@ export const addProduct = async (product, dispatch) => {
   }
 };
 
+// users
 export const getUsers = async (dispatch) => {
   dispatch(getUserStart());
   try {
@@ -78,5 +89,34 @@ export const getUsers = async (dispatch) => {
     dispatch(getUserSuccess(res.data));
   } catch (err) {
     dispatch(getUserFailure());
+  }
+};
+
+export const deleteUser = async (id, dispatch) => {
+  dispatch(deleteUserStart());
+  try {
+    // const res = await userRequest.delete(`/users/${id}`);
+    dispatch(deleteUserSuccess(id));
+  } catch (err) {
+    dispatch(deleteUserFailure());
+  }
+};
+
+export const updateUser = async (id, user, dispatch) => {
+  dispatch(updateUserStart());
+  try {
+    dispatch(updateUserSuccess({ id, user }));
+  } catch (err) {
+    dispatch(updateUserFailure());
+  }
+};
+
+export const addUser = async (user, dispatch) => {
+  dispatch(addUserStart());
+  try {
+    const res = await userRequest.post(`/users`, user);
+    dispatch(addUserSuccess(res.data));
+  } catch (err) {
+    dispatch(addUserFailure());
   }
 };

@@ -1,3 +1,8 @@
+import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect, useState, useMemo } from "react";
+import { userRequest } from "../../requestMethods.js";
+import { format } from "timeago.js";
 import {
   CalendarToday,
   LocationSearching,
@@ -6,7 +11,6 @@ import {
   PhoneAndroid,
   Publish,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
 import {
   Container,
   TitleWrap,
@@ -34,6 +38,14 @@ import {
 } from "./User.js";
 
 export default function User() {
+  const location = useLocation();
+  const userId = location.pathname.split("/")[2];
+  const [userStats, setUserStats] = useState([]);
+
+  const user = useSelector((state) =>
+    state.user.users.find((user) => user._id === userId)
+  );
+
   return (
     <Container>
       <TitleWrap>
@@ -46,33 +58,33 @@ export default function User() {
         <UserShow>
           <Top>
             <ImgShow
-              src="https://i2.wp.com/lukeatkins.com/wp-content/uploads/2019/10/20150205-img_3269_test_a4_cmyk300_tko-final_revised-1_1140x760_acf_cropped.png?fit=1140%2C760"
+              src={user.img || "https://pomagamy.se/image/NoUser.webp"}
               alt="user avatar"
             />
-            <UsernameShow>Maciej Sulenta</UsernameShow>
+            <UsernameShow>{user.username}</UsernameShow>
           </Top>
           <Bottom>
             <ShowTitle>Dane szczegółowe</ShowTitle>
             <InfoWrap>
               <PermIdentity />
-              <InfoTitle>msulenta</InfoTitle>
+              <InfoTitle>-------</InfoTitle>
             </InfoWrap>
             <InfoWrap>
               <CalendarToday />
-              <InfoTitle>12.12.1998</InfoTitle>
+              <InfoTitle>{format(user.createdAt)}</InfoTitle>
             </InfoWrap>
             <ShowTitle>Dane kontaktowe</ShowTitle>
             <InfoWrap>
               <PhoneAndroid />
-              <InfoTitle>+48 123 456 67</InfoTitle>
+              <InfoTitle>--------</InfoTitle>
             </InfoWrap>
             <InfoWrap>
               <MailOutline />
-              <InfoTitle>maciej.sulenta@gmail.com</InfoTitle>
+              <InfoTitle>{user.email}</InfoTitle>
             </InfoWrap>
             <InfoWrap>
               <LocationSearching />
-              <InfoTitle>Warszawa Polska</InfoTitle>
+              <InfoTitle>-------</InfoTitle>
             </InfoWrap>
           </Bottom>
         </UserShow>
@@ -82,29 +94,29 @@ export default function User() {
             <Left>
               <Item>
                 <Label>Login</Label>
-                <Input type="text" placeholder="msulenta" />
+                <Input type="text" placeholder={user.username} />
               </Item>
               <Item>
                 <Label>Imię i nazwisko</Label>
-                <Input type="text" placeholder="maciej sulenta" />
+                <Input type="text" placeholder="-------" />
               </Item>
               <Item>
                 <Label>Email</Label>
-                <Input type="text" placeholder="maciej.sulenta@gmail.com" />
+                <Input type="text" placeholder={user.email} />
               </Item>
               <Item>
                 <Label>Numer telefonu</Label>
-                <Input type="text" placeholder="+48 123 456 67" />
+                <Input type="text" placeholder="-------" />
               </Item>
               <Item>
                 <Label>Adres zamieszkania</Label>
-                <Input type="text" placeholder="Warszawa Polska" />
+                <Input type="text" placeholder="-------" />
               </Item>
             </Left>
             <Right>
               <Upload>
                 <UpdateImg
-                  src="https://i2.wp.com/lukeatkins.com/wp-content/uploads/2019/10/20150205-img_3269_test_a4_cmyk300_tko-final_revised-1_1140x760_acf_cropped.png?fit=1140%2C760"
+                  src={user.img || "https://pomagamy.se/image/NoUser.webp"}
                   alt="user avatar"
                 />
                 <Label htmlFor="file">

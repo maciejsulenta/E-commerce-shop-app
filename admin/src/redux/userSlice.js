@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    // currentUser: null,
+    currentUser: null,
     users: [],
     isFetching: false,
     error: false,
@@ -20,6 +20,7 @@ export const userSlice = createSlice({
       state.isFetching = false;
       state.error = true;
     },
+    //get all users
     getUserStart: (state) => {
       state.isFetching = true;
       state.error = false;
@@ -29,6 +30,50 @@ export const userSlice = createSlice({
       state.users = action.payload;
     },
     getUserFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+    },
+    //delete user
+    deleteUserStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    deleteUserSuccess: (state, action) => {
+      state.isFetching = false;
+      state.users.splice(
+        state.users.findIndex((item) => item._id === action.payload),
+        1
+      );
+    },
+    deleteUserFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+    },
+    //update user
+    updateUserStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    updateUserSuccess: (state, action) => {
+      state.isFetching = false;
+      state.users[
+        state.users.findIndex((item) => item._id === action.payload.id)
+      ] = action.payload.user;
+    },
+    updateUserFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+    },
+    //add
+    addUserStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    addUserSuccess: (state, action) => {
+      state.isFetching = false;
+      state.users.push(action.payload);
+    },
+    addUserFailure: (state) => {
       state.isFetching = false;
       state.error = true;
     },
@@ -42,6 +87,15 @@ export const {
   getUserStart,
   getUserSuccess,
   getUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  deleteUserFailure,
+  updateUserStart,
+  updateUserSuccess,
+  updateUserFailure,
+  addUserStart,
+  addUserSuccess,
+  addUserFailure,
 } = userSlice.actions;
 
 export default userSlice.reducer;
