@@ -13,7 +13,23 @@ import {
   addProductSuccess,
   addProductFailure,
 } from "./productRedux";
-import { loginFailure, loginStart, loginSuccess } from "./userSlice";
+import {
+  loginStart,
+  loginSuccess,
+  loginFailure,
+  getUserStart,
+  getUserSuccess,
+  getUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  deleteUserFailure,
+  updateUserStart,
+  updateUserSuccess,
+  updateUserFailure,
+  addUserStart,
+  addUserSuccess,
+  addUserFailure,
+} from "./userSlice";
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
@@ -25,6 +41,7 @@ export const login = async (dispatch, user) => {
   }
 };
 
+//products
 export const getProducts = async (dispatch) => {
   dispatch(getProductStart());
   try {
@@ -61,5 +78,45 @@ export const addProduct = async (product, dispatch) => {
     dispatch(addProductSuccess(res.data));
   } catch (err) {
     dispatch(addProductFailure());
+  }
+};
+
+// users
+export const getUsers = async (dispatch) => {
+  dispatch(getUserStart());
+  try {
+    const res = await userRequest.get("/users");
+    dispatch(getUserSuccess(res.data));
+  } catch (err) {
+    dispatch(getUserFailure());
+  }
+};
+
+export const deleteUser = async (id, dispatch) => {
+  dispatch(deleteUserStart());
+  try {
+    // const res = await userRequest.delete(`/users/${id}`);
+    dispatch(deleteUserSuccess(id));
+  } catch (err) {
+    dispatch(deleteUserFailure());
+  }
+};
+
+export const updateUser = async (id, user, dispatch) => {
+  dispatch(updateUserStart());
+  try {
+    dispatch(updateUserSuccess({ id, user }));
+  } catch (err) {
+    dispatch(updateUserFailure());
+  }
+};
+
+export const addUser = async (user, dispatch) => {
+  dispatch(addUserStart());
+  try {
+    const res = await userRequest.post(`/users`, user);
+    dispatch(addUserSuccess(res.data));
+  } catch (err) {
+    dispatch(addUserFailure());
   }
 };
