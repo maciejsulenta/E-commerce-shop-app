@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   flex: 1;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(255, 255, 255, 0.75);
   padding: 20px;
   margin-right: 20px;
+  background-color: #efeeef;
 `;
 export const Title = styled.span`
   font-size: 22px;
@@ -41,7 +42,8 @@ export const Button = styled.button`
   border: none;
   border-radius: 10px;
   padding: 7px 10px;
-  background-color: #eeeef7;
-  color: #555;
+  background-color: #333;
+  gap: 8px;
+  color: #eee;
   cursor: pointer;
 `;

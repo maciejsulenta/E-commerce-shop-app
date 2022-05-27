@@ -11,18 +11,18 @@ export default function Home() {
 
   const months = useMemo(
     () => [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Agu",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
+      "Styczeń",
+      "Luty",
+      "Marzec",
+      "Kwiecień",
+      "Maj",
+      "Czerwiec",
+      "Lipiec",
+      "Sierpień",
+      "Wrzesień",
+      "Październik",
+      "Listopad",
+      "Grudzień",
     ],
     []
   );
@@ -37,7 +37,7 @@ export default function Home() {
         list.map((item) => {
           setUserStats((prev) => [
             ...prev,
-            { name: months[item._id - 1], "Active User": item.total },
+            { name: months[item._id - 1], "założone konta": item.total },
           ]);
         });
       } catch {}
@@ -50,9 +50,9 @@ export default function Home() {
       <FeaturedInfo />
       <Chart
         data={userStats}
-        title="User Analytics"
+        title="Statystyka rejestracji użytkowników"
         grid
-        dataKey="Active User"
+        dataKey="założone konta"
       />
       <Widgets>
         <WidgetSm />

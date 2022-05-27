@@ -43,7 +43,7 @@ export default function FeaturedInfo() {
       <Item>
         <Title>Obroty</Title>
         <MoneyContainer>
-          <Money>2137 zł</Money>
+          <Money>2000 zł</Money>
           <MoneyRate>{perc < 0 ? <ArrowRed /> : <ArrowGreen />}</MoneyRate>
         </MoneyContainer>
         <Sub>w porównaniu do poprzedniego miesiąca</Sub>
@@ -52,8 +52,8 @@ export default function FeaturedInfo() {
       <Item>
         <Title>Koszta</Title>
         <MoneyContainer>
-          <Money>997 zł</Money>
-          <MoneyRate>{perc < 0 ? <ArrowRed /> : <ArrowGreen />}</MoneyRate>
+          <Money>990 zł</Money>
+          <MoneyRate>{-perc < 0 ? <ArrowRed /> : <ArrowGreen />}</MoneyRate>
         </MoneyContainer>
         <Sub>w porównaniu do poprzedniego miesiąca</Sub>
       </Item>
