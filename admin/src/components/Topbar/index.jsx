@@ -16,7 +16,7 @@ export default function Topbar() {
     <Container>
       <Wrapper>
         <Left>
-          <Logo></Logo>
+          <Logo>sklepik.</Logo>
         </Left>
         <Right>
           <IconContainer>
