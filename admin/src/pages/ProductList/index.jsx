@@ -22,7 +22,7 @@ export default function ProductList() {
     { field: "_id", headerName: "ID", width: 230 },
     {
       field: "product",
-      headerName: "Product",
+      headerName: "Produkt",
       width: 200,
       renderCell: (params) => {
         return (
@@ -37,15 +37,20 @@ export default function ProductList() {
         );
       },
     },
-    { field: "inStock", headerName: "Stock", width: 200 },
+    {
+      field: "inStock",
+      headerName: "Na stanie",
+      width: 200,
+      renderCell: (params) => (params.row.inStock == true ? "tak" : "nie"),
+    },
     {
       field: "price",
-      headerName: "Price",
+      headerName: "Cena",
       width: 160,
     },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "Akcje",
       width: 150,
       renderCell: (params) => {
         return (
