@@ -41,7 +41,7 @@ export default function ProductList() {
       field: "inStock",
       headerName: "Na stanie",
       width: 200,
-      renderCell: (params) => (params.row.inStock == true ? "tak" : "nie"),
+      renderCell: (params) => (params.row.inStock === true ? "tak" : "nie"),
     },
     {
       field: "price",

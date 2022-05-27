@@ -27,14 +27,6 @@ export const Input = styled.input`
   border: 1px solid gray;
   border-radius: 5px;
 `;
-export const Gender = styled.div`
-  margin-top: 15px;
-`;
-export const Select = styled.select`
-  height: 40px;
-  border-radius: 5px;
-`;
-export const Option = styled.option``;
 export const Button = styled.button`
   width: fit-content;
   border: none;

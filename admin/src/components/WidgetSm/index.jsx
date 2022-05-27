@@ -40,7 +40,9 @@ export default function WidgetSm() {
               <User>{user.username}</User>
             </UserWrap>
             <Link style={{ textDecoration: "none" }} to={"/user/" + user._id}>
-              <Button>Zobacz</Button>
+              <Button>
+                <Visibility /> Zobacz
+              </Button>
             </Link>
           </ListItem>
         ))}

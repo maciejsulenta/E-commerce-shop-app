@@ -15,9 +15,6 @@ import {
   Item,
   Label,
   Input,
-  Gender,
-  Select,
-  Option,
   Button,
 } from "./NewUser";
 
