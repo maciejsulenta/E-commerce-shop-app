@@ -12,14 +12,11 @@ import {
   Publish,
 } from "@material-ui/icons";
 import {
-  
-  TitleWrap,
-  Title,
   Button,
   UserContainer,
   UserShow,
-  Top,
-  Bottom,
+  UserHeader,
+  InfoContainer,
   ImgShow,
   UsernameShow,
   ShowTitle,
@@ -47,22 +44,16 @@ export default function User() {
 
   return (
     <Container padd>
-      <TitleWrap>
-        <Title>Panel edycji użytkownika</Title>
-        <Link to="/newUser">
-          <Button>Stwórz użytkownika</Button>
-        </Link>
-      </TitleWrap>
       <UserContainer>
         <UserShow>
-          <Top>
+          <UserHeader>
             <ImgShow
               src={user.img || "https://pomagamy.se/image/NoUser.webp"}
               alt="user avatar"
             />
             <UsernameShow>{user.username}</UsernameShow>
-          </Top>
-          <Bottom>
+          </UserHeader>
+          <InfoContainer bgc>
             <ShowTitle>Dane szczegółowe</ShowTitle>
             <InfoWrap>
               <PermIdentity />
@@ -72,6 +63,8 @@ export default function User() {
               <CalendarToday />
               <InfoTitle>{format(user.createdAt)}</InfoTitle>
             </InfoWrap>
+          </InfoContainer>
+          <InfoContainer>
             <ShowTitle>Dane kontaktowe</ShowTitle>
             <InfoWrap>
               <PhoneAndroid />
@@ -85,12 +78,12 @@ export default function User() {
               <LocationSearching />
               <InfoTitle>{user.address}</InfoTitle>
             </InfoWrap>
-          </Bottom>
+          </InfoContainer>
         </UserShow>
         <UpdateWrap>
-          <UpdateTitle>Zobacz</UpdateTitle>
           <Form>
             <Left>
+              <UpdateTitle>Edytuj profil użytkownika</UpdateTitle>
               <Item>
                 <Label>Login</Label>
                 <Input type="text" placeholder={user.username} />
@@ -118,8 +111,15 @@ export default function User() {
                   src={user.img || "https://pomagamy.se/image/NoUser.webp"}
                   alt="user avatar"
                 />
+                Wgraj nowy avatar
                 <Label htmlFor="file">
-                  <Publish style={{ cursor: "pointer" }} />
+                  <Publish
+                    style={{
+                      cursor: "pointer",
+                      fontSize: "3em",
+                      color: "#333",
+                    }}
+                  />
                 </Label>
                 <Input file type="file" id="file" />
               </Upload>
