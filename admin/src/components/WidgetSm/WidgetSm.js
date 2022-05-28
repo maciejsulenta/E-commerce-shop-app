@@ -1,22 +1,23 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  font-size: 20px;
   flex: 1;
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  padding: 2em 1em;
   margin-right: 20px;
   background-color: #fff;
   border-radius: 1em;
   color: #333;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  /* background-color: blue; */
+  gap: 1em;
 `;
 export const Title = styled.span`
-  font-size: 22px;
+  font-size: 1.1em;
   font-weight: 600;
 `;
 export const List = styled.ul`
@@ -24,6 +25,7 @@ export const List = styled.ul`
   padding: 0;
   list-style: none;
   width: 90%;
+  font-size: 0.8em;
 `;
 export const ListItem = styled.li`
   display: flex;
@@ -36,10 +38,12 @@ export const Image = styled.img`
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  margin-right: 1em;
 `;
 export const UserWrap = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 `;
 export const User = styled.span`
   font-weight: 600;

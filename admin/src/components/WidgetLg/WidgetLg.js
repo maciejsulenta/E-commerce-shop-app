@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  font-size: 20px;
   flex: 2;
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
@@ -10,17 +11,18 @@ export const Container = styled.div`
   color: #333;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1em;
 `;
 export const Title = styled.h3`
-  font-size: 22px;
+  font-size: 1.1em;
   font-weight: 600;
 `;
 export const Table = styled.table`
   width: 100%;
   border-spacing: 20px;
+  font-size: 0.9em;
 `;
 export const TableRow = styled.thead``;
 export const TableHeader = styled.th`
