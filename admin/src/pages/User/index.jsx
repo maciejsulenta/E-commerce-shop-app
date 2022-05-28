@@ -12,7 +12,7 @@ import {
   Publish,
 } from "@material-ui/icons";
 import {
-  Container,
+  
   TitleWrap,
   Title,
   Button,
@@ -36,7 +36,7 @@ import {
   Upload,
   UpdateImg,
 } from "./User.js";
-
+import { Container } from "../../components/Container";
 export default function User() {
   const location = useLocation();
   const userId = location.pathname.split("/")[2];
@@ -46,7 +46,7 @@ export default function User() {
   );
 
   return (
-    <Container>
+    <Container padd>
       <TitleWrap>
         <Title>Panel edycji użytkownika</Title>
         <Link to="/newUser">

@@ -8,16 +8,8 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import {
-  Container,
-  Title,
-  Form,
-  Item,
-  Label,
-  Input,
-  Button,
-} from "./NewUser";
-
+import { Title, Form, Item, Label, Input, Button } from "./NewUser";
+import { Container } from "../../components/Container";
 export default function NewUser() {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
@@ -77,7 +69,7 @@ export default function NewUser() {
   };
 
   return (
-    <Container>
+    <Container padd>
       <Title>Nowy użytkownik</Title>
       <Form>
         <Item>

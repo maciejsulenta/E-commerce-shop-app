@@ -25,7 +25,6 @@ function App() {
             <Topbar />
             <div className="container">
               <Sidebar />
-
               <Route exact path="/admin">
                 <Home />
               </Route>

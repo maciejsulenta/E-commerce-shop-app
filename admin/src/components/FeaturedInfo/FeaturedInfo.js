@@ -10,17 +10,23 @@ export const Item = styled.div`
   flex: 1;
   margin: 0px 20px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 1em;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  background-color: #efeeef;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
+  background: ${(props) => props.bgc};
+  color: #fff;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: skew(1.5deg, -1.5deg);
+  }
 `;
 export const Title = styled.h2`
-  font-size: 20px;
+  font-size: 1.2em;
 `;
 export const MoneyContainer = styled.div`
-  margin: 10px 0px;
+  margin: 0.5em 0;
   display: flex;
   align-items: center;
 `;
@@ -33,18 +39,13 @@ export const MoneyRate = styled.span`
   align-items: center;
   margin-left: 20px;
 `;
-export const Icon = styled.div`
-  font-size: 14px;
-  margin-left: 5px;
-  color: ${(props) => (props.color ? "red" : "green")};
-`;
 export const Sub = styled.span`
   font-size: 15px;
-  color: gray;
+  color: #fff;
 `;
 export const ArrowGreen = styled(ArrowUpward)`
   color: green;
 `;
 export const ArrowRed = styled(ArrowDownward)`
-  color: red;
+  color: #b20a2c;
 `;

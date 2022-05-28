@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
-import { Container, Item, Img, Button } from "./ProductList";
-
+import {  Item, Img, Button } from "./ProductList";
+import { Container } from "../../components/Container";
 export default function ProductList() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);

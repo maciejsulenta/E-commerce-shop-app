@@ -9,7 +9,6 @@ import app from "../../firebase";
 import { addProduct } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import {
-  Container,
   Title,
   Form,
   Item,
@@ -19,7 +18,7 @@ import {
   Option,
   Button,
 } from "./NewProduct";
-
+import { Container } from "../../components/Container";
 export default function NewProduct() {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
@@ -86,7 +85,7 @@ export default function NewProduct() {
 
   console.log(file);
   return (
-    <Container>
+    <Container padd>
       <Title>Dodaj nowy produkt</Title>
       <Form>
         <Item>

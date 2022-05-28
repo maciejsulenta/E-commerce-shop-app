@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import { userRequest } from "../../requestMethods";
 import {
-  Container,
   TitleWrap,
   Title,
   Button,
@@ -30,7 +29,7 @@ import {
   Select,
   Option,
 } from "./Product";
-
+import { Container } from "../../components/Container";
 export default function Product() {
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
@@ -78,7 +77,7 @@ export default function Product() {
   }, [productId, months]);
 
   return (
-    <Container>
+    <Container padd>
       <TitleWrap>
         <Title>Produkt</Title>
         <Link to="/newproduct">

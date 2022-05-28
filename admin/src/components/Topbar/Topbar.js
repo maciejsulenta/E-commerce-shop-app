@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  flex: 4;
   height: 60px;
-  background-color: #efeeef;
+  background: linear-gradient(
+    90deg,
+    rgba(35, 37, 38, 1) 0%,
+    rgba(65, 67, 69, 1) 31%
+  );
   position: sticky;
   top: 0px;
   z-index: 999;
-  border-bottom: 3px solid #333;
+  font-size: 20px;
 `;
 export const Wrapper = styled.div`
   height: 100%;
@@ -20,7 +24,9 @@ export const Left = styled.div``;
 export const Logo = styled.span`
   font-weight: bold;
   font-size: 30px;
-  color: cadetblue;
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   cursor: pointer;
 `;
 export const Right = styled.div`
@@ -31,7 +37,7 @@ export const IconContainer = styled.div`
   position: relative;
   cursor: pointer;
   margin-right: 10px;
-  color: #555;
+  color: #eee;
 `;
 export const IconBadge = styled.span`
   width: 15px;

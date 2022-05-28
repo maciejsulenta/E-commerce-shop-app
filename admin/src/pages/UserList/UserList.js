@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  flex: 4;
-`;
 export const User = styled.div`
   display: flex;
   align-items: center;
