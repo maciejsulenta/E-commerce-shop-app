@@ -29,7 +29,7 @@ export default function FeaturedInfo() {
 
   return (
     <Container>
-      <Item>
+      <Item bgc="linear-gradient(to right, #904e95, #e96443);">
         <Title>Przychód</Title>
         <MoneyContainer>
           <Money>{income[1]?.total} zł</Money>
@@ -40,7 +40,7 @@ export default function FeaturedInfo() {
         <Sub>w porównaniu do poprzedniego miesiąca</Sub>
       </Item>
 
-      <Item>
+      <Item bgc="linear-gradient(to left, #6DD5FA, #2980B9);">
         <Title>Obroty</Title>
         <MoneyContainer>
           <Money>2000 zł</Money>
@@ -49,7 +49,7 @@ export default function FeaturedInfo() {
         <Sub>w porównaniu do poprzedniego miesiąca</Sub>
       </Item>
 
-      <Item>
+      <Item bgc="linear-gradient(to right, #56ab2f, #a8e063);">
         <Title>Koszta</Title>
         <MoneyContainer>
           <Money>990 zł</Money>

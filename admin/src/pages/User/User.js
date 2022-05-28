@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  flex: 4;
-  padding: 20px;
-`;
 export const TitleWrap = styled.div`
   display: flex;
   align-items: center;

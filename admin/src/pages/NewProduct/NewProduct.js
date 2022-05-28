@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  flex: 4;
-`;
 export const Title = styled.h1``;
 export const Form = styled.form`
   margin-top: 10px;

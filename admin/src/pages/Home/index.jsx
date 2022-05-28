@@ -4,7 +4,8 @@ import WidgetSm from "../../components/WidgetSm";
 import WidgetLg from "../../components/WidgetLg";
 import { useEffect, useMemo, useState } from "react";
 import { userRequest } from "../../requestMethods";
-import { Container, Widgets } from "./Home.js";
+import { Widgets } from "./Home.js";
+import { Container } from "../../components/Container";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);
