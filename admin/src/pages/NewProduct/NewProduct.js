@@ -1,34 +1,69 @@
 import styled from "styled-components";
 
-export const Title = styled.h1``;
-export const Form = styled.form`
-  margin-top: 10px;
+export const Title = styled.h1`
+  color: #333;
 `;
-export const Item = styled.div`
-  width: 250px;
+export const Form = styled.form`
+  background-color: rgba(35, 37, 38, 0.4);
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5;
+  height: fit-content;
+  min-width: 24em;
+  width: 40%;
+  padding: 2em 0;
+`;
+export const Item = styled.div`
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 `;
 export const Label = styled.label`
-  color: gray;
-  font-weight: 600;
-  margin-bottom: 10px;
+  margin: 0.5em 0 0.3em 0;
+  font-size: 1em;
 `;
 export const Input = styled.input`
-  padding: 10px;
+  font-size: 1em;
+  border: none;
+  width: 100%;
+  padding: 1em 0 1em 1em;
+  border-radius: 1em;
+  outline: none;
+  display: ${(props) => props.file && "none"};
+  &:focus {
+    -webkit-box-shadow: 0px 0px 15px 0px #e0eafc;
+    box-shadow: 0px 0px 15px 0px #e0eafc;
+  }
 `;
 export const Select = styled.select`
-  padding: 10px;
+  font-size: 1em;
+  border: none;
+  width: 100%;
+  padding: 1em;
+  border-radius: 1em;
+  outline: none;
+  display: ${(props) => props.file && "none"};
+  &:focus {
+    -webkit-box-shadow: 0px 0px 15px 0px #e0eafc;
+    box-shadow: 0px 0px 15px 0px #e0eafc;
+  }
 `;
 export const Option = styled.option``;
 export const Button = styled.button`
-  margin-top: 10px;
-  padding: 7px 10px;
+  width: fit-content;
   border: none;
-  border-radius: 10px;
-  background-color: cadetblue;
-  color: white;
-  font-weight: 600;
+  padding: 1em 2em;
+  margin-top: 2em;
+  background: linear-gradient(to top, #232526, #414345);
+  border-radius: 0.5em;
   cursor: pointer;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;

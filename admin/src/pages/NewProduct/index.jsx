@@ -85,9 +85,9 @@ export default function NewProduct() {
 
   console.log(file);
   return (
-    <Container padd>
-      <Title>Dodaj nowy produkt</Title>
+    <Container padd style={{ justifyContent: "center", alignItems: "center" }}>
       <Form>
+        <Title>Stwórz produkt</Title>
         <Item>
           <Label>Avatar</Label>
           <Input
@@ -144,65 +144,5 @@ export default function NewProduct() {
         </Button>
       </Form>
     </Container>
-
-    // <div className="newProduct">
-    //   <h1 className="addProductTitle">New Product</h1>
-    //   <form className="addProductForm">
-    //     <div className="addProductItem">
-    //       <label>Image</label>
-    //       <input
-    //         type="file"
-    //         id="file"
-    //         onChange={(e) => setFile(e.target.files[0])}
-    //       />
-    //     </div>
-    //     <div className="addProductItem">
-    //       <label>Title</label>
-    //       <input
-    //         name="title"
-    //         type="text"
-    //         placeholder="Item title"
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     <div className="addProductItem">
-    //       <label>Price</label>
-    //       <input
-    //         name="price"
-    //         type="number"
-    //         placeholder="price"
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     <div className="addProductItem">
-    //       <label>Desc</label>
-    //       <input
-    //         name="desc"
-    //         type="text"
-    //         placeholder="description"
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     <div className="addProductItem">
-    //       <label>Categories</label>
-    //       <input
-    //         name="categories"
-    //         type="text"
-    //         placeholder="categories"
-    //         onChange={handleCategories}
-    //       />
-    //     </div>
-    //     <div className="addProductItem">
-    //       <label>Stock</label>
-    //       <select name="inStock" onChange={handleChange}>
-    //         <option value="true">tak</option>
-    //         <option value="false">nie</option>
-    //       </select>
-    //     </div>
-    //     <button className="addProductButton" onClick={handleClick}>
-    //       Create
-    //     </button>
-    //   </form>
-    // </div>
   );
 }
