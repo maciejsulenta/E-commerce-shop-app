@@ -69,9 +69,9 @@ export default function NewUser() {
   };
 
   return (
-    <Container padd>
-      <Title>Nowy użytkownik</Title>
+    <Container padd style={{ justifyContent: "center", alignItems: "center" }}>
       <Form>
+        <Title>Stwórz użytkownika</Title>
         <Item>
           <Label>Avatar</Label>
           <Input

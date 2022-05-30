@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
-import {  Item, Img, Button } from "./ProductList";
+import { Item, Img, Button } from "./ProductList";
 import { Container } from "../../components/Container";
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -59,7 +59,10 @@ export default function ProductList() {
               <Button>Edytuj</Button>
             </Link>
             <DeleteOutline
-              style={{ color: "red", cursor: "pointer" }}
+              style={{
+                color: "red",
+                cursor: "pointer",
+              }}
               onClick={() => handleDelete(params.row._id)}
             />
           </>
