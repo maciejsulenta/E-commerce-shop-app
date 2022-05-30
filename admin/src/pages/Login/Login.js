@@ -16,35 +16,60 @@ export const Container = styled.div`
   justify-content: center;
 `;
 export const Wrapper = styled.div`
-  width: 25%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: white;
-  ${mobile({ width: "75%" })};
+  background-color: rgba(35, 37, 38, 0.4);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5;
+  height: fit-content;
+  min-width: 24em;
+  width: 30%;
+  padding: 2em 0;
 `;
 export const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 300;
+  color: #333;
 `;
 export const Form = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 `;
 export const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 10px 0;
-  padding: 10px;
+  font-size: 1em;
+  border: none;
+  width: 70%;
+  padding: 1em 0 1em 1em;
+  border-radius: 1em;
+  outline: none;
+  display: ${(props) => props.file && "none"};
+  &:focus {
+    -webkit-box-shadow: 0px 0px 15px 0px #e0eafc;
+    box-shadow: 0px 0px 15px 0px #e0eafc;
+  }
 `;
 
 export const Button = styled.button`
-  width: 40%;
+  width: fit-content;
   border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
+  padding: 1em 2em;
+  margin-top: 2em;
+  background: linear-gradient(to top, #232526, #414345);
+  border-radius: 0.5em;
   cursor: pointer;
-  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
   &:disabled {
     color: green;
     cursor: not-allowed;
