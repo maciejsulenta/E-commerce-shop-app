@@ -12,11 +12,17 @@ export const Img = styled.img`
   margin-right: 10px;
 `;
 export const Button = styled.button`
+  width: fit-content;
   border: none;
-  border-radius: 10px;
-  padding: 5px 10px;
-  background-color: #3bb077;
-  color: white;
+  padding: .5em 1.5em;
+  margin-right: 1em;
+  background: linear-gradient(to top, #232526, #414345);
+  border-radius: 0.5em;
   cursor: pointer;
-  margin-right: 20px;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
