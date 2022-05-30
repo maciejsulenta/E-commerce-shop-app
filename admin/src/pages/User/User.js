@@ -10,7 +10,7 @@ export const Button = styled.button`
   width: fit-content;
   border: none;
   padding: 1em 2em;
-  background: linear-gradient(to right, #232526, #414345);
+  background: linear-gradient(to top, #232526, #414345);
   border-radius: 0.5em;
   cursor: pointer;
   color: #fff;
@@ -26,7 +26,7 @@ export const UserContainer = styled.div`
 `;
 export const UserShow = styled.div`
   flex: 1;
-  border-radius: 2em;
+  border-radius: 1em;
   padding: 20px;
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
@@ -35,7 +35,7 @@ export const UserShow = styled.div`
   justify-content: center;
   align-content: center;
   gap: 2em;
-  background: linear-gradient(to bottom, #f2994a, #f2c94c);
+  background-color: #fff;
 `;
 export const UserHeader = styled.div`
   display: flex;
@@ -43,13 +43,13 @@ export const UserHeader = styled.div`
   align-items: center;
   justify-content: center;
   height: 16em;
-  border-radius: 2em;
+  border-radius: 1em;
   padding-left: 1em;
 `;
 export const InfoContainer = styled.div`
   height: ${(props) => (props.bgc ? "12em" : "16em")};
   background-color: rgba(35, 37, 38, 0.4);
-  border-radius: 2em;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -97,11 +97,11 @@ export const InfoTitle = styled.span`
 export const UpdateWrap = styled.div`
   flex: 2;
   padding: 20px;
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  background: linear-gradient(to bottom, #f2994a, #f2c94c);
-  margin-left: 20px;
-  border-radius: 2em;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  margin-left: 1em;
+  border-radius: 1em;
 `;
 export const Form = styled.form`
   display: flex;
@@ -118,7 +118,7 @@ export const UpdateTitle = styled.h2`
 export const Left = styled.div`
   background-color: rgba(35, 37, 38, 0.4);
   padding: 2em;
-  border-radius: 2em;
+  border-radius: 1em;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -149,12 +149,12 @@ export const Input = styled.input`
   border: none;
   width: 100%;
   padding: 1em 0 1em 1em;
-  border-radius: 2em;
+  border-radius: 1em;
   outline: none;
   display: ${(props) => props.file && "none"};
   &:focus {
-    -webkit-box-shadow: 0px 0px 15px 0px #f2c94c;
-    box-shadow: 0px 0px 15px 0px #f2c94c;
+    -webkit-box-shadow: 0px 0px 15px 0px #e0eafc;
+    box-shadow: 0px 0px 15px 0px #e0eafc;
   }
 `;
 export const Upload = styled.div`
@@ -168,7 +168,7 @@ export const Upload = styled.div`
 export const UpdateImg = styled.img`
   height: 16em;
   aspect-ratio: 1/1.5;
-  border-radius: 2em;
+  border-radius: 1em;
   object-fit: cover;
   margin-bottom: 2em;
 `;

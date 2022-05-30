@@ -79,14 +79,16 @@ export default function Product() {
   return (
     <Container padd>
       <TitleWrap>
-        <Title>Produkt</Title>
-        <Link to="/newproduct">
-          <Button>Stwórz produkt</Button>
-        </Link>
+        <Title>Edytuj produkt</Title>
       </TitleWrap>
       <Top>
         <TopLeft>
-          <Chart data={pStats} dataKey="Sales" title="Sprzedaże" />
+          <Chart
+            data={pStats}
+            dataKey="Sales"
+            title="Sprzedaże"
+            style={{ backgroundColor: "blue" }}
+          />
         </TopLeft>
         <TopRight>
           <ProductInfo>
@@ -114,7 +116,7 @@ export default function Product() {
       <Bottom>
         <Form>
           <FormLeft>
-            <Label>Nazwa produktu</Label>
+            <Label padd>Nazwa produktu</Label>
             <Input type="text" placeholder={product.title} />
             <Label>Opis produktu</Label>
             <Input type="text" placeholder={product.desc} />
@@ -127,14 +129,28 @@ export default function Product() {
             </Select>
           </FormLeft>
           <FormRight>
-            <Upload>
-              <ImageUpload src={product.img} alt="product image" />
-              <Label htmlFor="file">
-                <Publish />
-              </Label>
-              <Input type="file" id="file" style={{ display: "none" }} />
-            </Upload>
-            <Button>Aktualizuj</Button>
+            <ImageUpload src={product.img} alt="product image" />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: " center",
+              }}
+            >
+              <Upload>
+                <Label htmlFor="file">
+                  <Publish
+                    style={{
+                      cursor: "pointer",
+                      fontSize: "3em",
+                      color: "#333",
+                    }}
+                  />
+                </Label>
+                <Input type="file" id="file" style={{ display: "none" }} />
+              </Upload>
+              <Button>Aktualizuj</Button>
+            </div>
           </FormRight>
         </Form>
       </Bottom>
