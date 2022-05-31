@@ -33,21 +33,23 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <Announcement />
-      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filtruj produkty:</FilterText>
           <Select name="color" onChange={handleFilters}>
-            <Option disabled>Kolor</Option>
-            <Option>biały</Option>
-            <Option>czerwony</Option>
-            <Option>czarny</Option>
-            <Option>zielony</Option>
-            <Option>niebieski</Option>
-            
+            <Option disabled defaultValue>
+              Kolor
+            </Option>
+            <Option value="white">biały</Option>
+            <Option value="red">czerwony</Option>
+            <Option value="black">czarny</Option>
+            <Option value="green">zielony</Option>
+            <Option value="blue">niebieski</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
-            <Option disabled>Rozmiar</Option>
+            <Option disabled defaultValue>
+              Rozmiar
+            </Option>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
@@ -65,7 +67,7 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products cat={cat} filter={filter} sort={sort}/>
+      <Products cat={cat} filter={filter} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>

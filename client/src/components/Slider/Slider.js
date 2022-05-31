@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import { mobile } from "../../utils/responsive";
+import { theme } from "../../utils/theme";
+
 export const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 90px);
+  height: 100vh;
   display: flex;
   position: relative;
-  background-color: #666;
+  top: -60px;
+  left: 0;
   overflow: hidden;
-  ${mobile({ display: "none" })};
 `;
 export const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: #fff7f7;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.black};
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -24,21 +27,23 @@ export const Arrow = styled.div`
   left: ${(props) => props.pos === "left" && "10px"};
   right: ${(props) => props.pos === "right" && "10px"};
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 2;
-`;
-export const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  transition: all 1s ease;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: ${theme.colors.blue};
+    color: ${theme.colors.white};
+  }
 `;
 export const Slide = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh + 60px);
   display: flex;
   align-items: center;
+  background-image: url(${(props) => props.src});
   background-color: ${(props) => props.bgc};
+  background-size: cover;
+  transition: all 0.5s ease;
 `;
 export const ImgContainer = styled.div`
   height: 100%;
@@ -51,24 +56,37 @@ export const Image = styled.img`
   height: 80%;
 `;
 export const InfoContainer = styled.div`
-  flex: 1;
-  padding: 50px;
   text-transform: uppercase;
+  width: 40em;
+  margin-left: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 export const Title = styled.h1`
-  font-size: 70px;
+  font-size: 4em;
+  letter-spacing: 0.02em;
+  line-height: 1em;
+  font-family: "Playfair-Display";
 `;
 export const Desc = styled.p`
-  margin: 50px 0;
-  font-size: 20px;
+  margin: 1em 0 3em 0;
+  font-size: 1em;
   font-weight: 500;
-  letter-spacing: 3px;
+  width: 70%;
 `;
 export const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
+  padding: 1em 2em;
+  font-size: 1em;
+  border-radius: 1em;
+  border: none;
+  color: ${theme.colors.platinum};
+  background-color: ${theme.colors.blue};
   cursor: pointer;
-`;
+  transition: all 0.2s ease;
 
-//38:14
+  &:hover {
+    background-color: ${theme.colors.darkBlue};
+  }
+`;

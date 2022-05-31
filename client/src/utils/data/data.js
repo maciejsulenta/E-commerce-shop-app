@@ -1,24 +1,21 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1533038590840-1cde6e668a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-    title: "WYPRZEDAŻ",
-    desc: "WYKORZYSTAJ 40% ZNIŻKI NA NOWE PRODUKTY",
-    bgc: "#f5fafd",
+    img: "https://fv9-3.failiem.lv/thumb_show.php?i=3haaq29aw&view",
+    title: "Nowa dostawa!",
+    desc: "Nie przegap najnowszych produktów, ktore wylądowały u nas w sklepie!",
   },
   {
     id: 2,
-    img: "https://images.pexels.com/photos/10854224/pexels-photo-10854224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    img: "https://fv9-6.failiem.lv/thumb_show.php?i=sk2b84vu4&view",
     title: "WYPRZEDAŻ",
     desc: "WYKORZYSTAJ 40% ZNIŻKI NA NOWE PRODUKTY",
-    bgc: "#fcf1ed",
   },
   {
     id: 3,
-    img: "https://images.pexels.com/photos/10854224/pexels-photo-10854224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    title: "WYPRZEDAŻ",
-    desc: "WYKORZYSTAJ 40% ZNIŻKI NA NOWE PRODUKTY",
-    bgc: "#f1cafd",
+    img: "https://fv9-3.failiem.lv/thumb_show.php?i=rg6nnh66v&view",
+    title: "Sukienki letnie",
+    desc: "Sprawdź już teraz najnowszą kolekcje!",
   },
 ];
 
@@ -33,13 +30,13 @@ export const categories = [
     id: 2,
     img: "https://images.pexels.com/photos/7446143/pexels-photo-7446143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     title: "Jeansy",
-    cat: "kurtki"
+    cat: "kurtki",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/10854224/pexels-photo-10854224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     title: "Akcesoria",
-    cat: "spodnie"
+    cat: "spodnie",
   },
 ];
 
