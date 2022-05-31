@@ -23,6 +23,8 @@ export default function NewProduct() {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [categories, setCategories] = useState([]);
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -33,6 +35,12 @@ export default function NewProduct() {
 
   const handleCategories = (e) => {
     setCategories(e.target.value.split(","));
+  };
+  const handleColor = (e) => {
+    setColor(e.target.value.split(","));
+  };
+  const handleSize = (e) => {
+    setSize(e.target.value.split(","));
   };
 
   const handleClick = (e) => {
@@ -75,7 +83,9 @@ export default function NewProduct() {
           const product = {
             ...inputs,
             img: downloadURL,
-            categories: categories,
+            categories,
+            size,
+            color,
           };
           addProduct(product, dispatch);
         });
@@ -103,6 +113,24 @@ export default function NewProduct() {
             type="text"
             placeholder="Nazwa produktu"
             onChange={handleChange}
+          />
+        </Item>
+        <Item>
+          <Label>Kolor</Label>
+          <Input
+            name="color"
+            type="text"
+            placeholder="Kolor produktu"
+            onChange={handleColor}
+          />
+        </Item>
+        <Item>
+          <Label>Rozmiar</Label>
+          <Input
+            name="size"
+            type="text"
+            placeholder="Rozmiary produktu"
+            onChange={handleSize}
           />
         </Item>
         <Item>
