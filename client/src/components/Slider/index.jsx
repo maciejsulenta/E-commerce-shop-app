@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import {
   Container,
   Arrow,
-  Wrapper,
   Slide,
   ImgContainer,
   Image,
@@ -28,26 +27,18 @@ const Slider = () => {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
-
   return (
     <Container>
       <Arrow pos="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined />
       </Arrow>
-      <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
-          <Slide bgc={item.bgc} key={item.id}>
-            <ImgContainer>
-              <Image src={item.img} />
-            </ImgContainer>
-            <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button>SPRAWDŹ TERAZ</Button>
-            </InfoContainer>
-          </Slide>
-        ))}
-      </Wrapper>
+      <Slide bgc="#d6dbde" src={sliderItems[slideIndex].img}>
+        <InfoContainer>
+          <Title>{sliderItems[slideIndex].title}</Title>
+          <Desc>{sliderItems[slideIndex].desc}</Desc>
+          <Button>Sprawdź teraz</Button>
+        </InfoContainer>
+      </Slide>
       <Arrow pos="right" onClick={() => handleClick("right")}>
         <ArrowRightOutlined />
       </Arrow>

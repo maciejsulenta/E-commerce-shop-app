@@ -11,29 +11,31 @@ import {
   Navigate,
 } from "react-router-dom";
 import SuccessPayment from "./pages/SuccessPayment";
-
+import { Theme } from "./components/Theme";
 const App = () => {
   const user = false;
 
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/productlist/:category" element={<ProductList />} />
-          <Route path="/products/:id" element={<Product />} />
-          <Route
-            path="/register"
-            element={user ? <Navigate to="/" /> : <Register />}
-          />
-          <Route
-            path="/login"
-            element={user ? <Navigate to="/" /> : <Login />}
-          />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/success" element={<SuccessPayment />} />
-        </Routes>
-      </Router>
+      <Theme>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/productlist/:category" element={<ProductList />} />
+            <Route path="/products/:id" element={<Product />} />
+            <Route
+              path="/register"
+              element={user ? <Navigate to="/" /> : <Register />}
+            />
+            <Route
+              path="/login"
+              element={user ? <Navigate to="/" /> : <Login />}
+            />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/success" element={<SuccessPayment />} />
+          </Routes>
+        </Router>
+      </Theme>
     </>
   );
 };
