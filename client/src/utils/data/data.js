@@ -33,7 +33,7 @@ export const categories = [
     id: 2,
     img: "https://static.zara.net/photos///2022/V/0/1/p/6188/400/401/82/w/613/6188400401_15_1_1.jpg?ts=1643301072155",
     title: "Akcesoria",
-    cat: "spodnie",
+    cat: "akcesoria",
   },
   {
     id: 3,

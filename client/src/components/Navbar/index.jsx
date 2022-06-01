@@ -35,7 +35,7 @@ const Navbar = () => {
       <Wrapper>
         <Left>
           <LinkS to="/">
-            <Logo visible={scrollNav}>.sklepik</Logo>
+            <Logo visible={scrollNav}>.sklepik~</Logo>
           </LinkS>
         </Left>
         <Center>
