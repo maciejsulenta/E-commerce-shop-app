@@ -43,18 +43,9 @@ export const Slide = styled.div`
   background-image: url(${(props) => props.src});
   background-color: ${(props) => props.bgc};
   background-size: cover;
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 `;
-export const ImgContainer = styled.div`
-  height: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const Image = styled.img`
-  height: 80%;
-`;
+
 export const InfoContainer = styled.div`
   text-transform: uppercase;
   width: 40em;
@@ -77,15 +68,15 @@ export const Desc = styled.p`
   width: 70%;
 `;
 export const Button = styled.button`
-  padding: 1em 2em;
   font-size: 1em;
+  font-family: ${theme.fonts};
+  padding: 1em 2em;
   border-radius: 1em;
   border: none;
   color: ${theme.colors.platinum};
   background-color: ${theme.colors.blue};
   cursor: pointer;
   transition: all 0.2s ease;
-
   &:hover {
     background-color: ${theme.colors.darkBlue};
   }

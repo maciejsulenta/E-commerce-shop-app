@@ -20,8 +20,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
 }
 body {
-    font-size: 20px;
-    font-family: ${({ theme }) => theme.fonts}, sans-serif;
+    font-size: 20px; 
     color: ${({ theme }) => theme.colors.black};
+    font-family: ${({ theme }) => theme.fonts}, sans-serif;
 }
 `;

@@ -1,32 +1,37 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import {
   Container,
   Arrow,
   Slide,
-  ImgContainer,
-  Image,
   InfoContainer,
   Title,
   Desc,
   Button,
 } from "./Slider";
 
-// import Landing from "../../utils/images/landing.svg";
-// import Landing1 from "../../utils/images/landing1.svg";
-// import Landing2 from "../../utils/images/landing2.svg";
 import { sliderItems } from "../../utils/data/data";
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const direction = "left";
 
-  const handleClick = (direction) => {
+  const handleClick = useCallback(() => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
-  };
+  }, [slideIndex, direction]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleClick();
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [handleClick]);
+
   return (
     <Container>
       <Arrow pos="left" onClick={() => handleClick("left")}>
@@ -36,7 +41,9 @@ const Slider = () => {
         <InfoContainer>
           <Title>{sliderItems[slideIndex].title}</Title>
           <Desc>{sliderItems[slideIndex].desc}</Desc>
-          <Button>Sprawdź teraz</Button>
+          <Link to={sliderItems[slideIndex].link}>
+            <Button>Sprawdź teraz</Button>
+          </Link>
         </InfoContainer>
       </Slide>
       <Arrow pos="right" onClick={() => handleClick("right")}>

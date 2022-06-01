@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
+import { Title } from "../components/Categories/Categories";
 const Home = () => {
   return (
     <div>
@@ -13,9 +14,10 @@ const Home = () => {
       <Navbar />
       <Slider />
       <Categories />
+      <Title>Najnowsze produkty w naszym sklepie</Title>
       <Products />
       <Newsletter />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
