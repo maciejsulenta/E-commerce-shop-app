@@ -68,15 +68,15 @@ export const Desc = styled.p`
   width: 70%;
 `;
 export const Button = styled.button`
-  padding: 1em 2em;
   font-size: 1em;
+  font-family: ${theme.fonts};
+  padding: 1em 2em;
   border-radius: 1em;
   border: none;
   color: ${theme.colors.platinum};
   background-color: ${theme.colors.blue};
   cursor: pointer;
   transition: all 0.2s ease;
-
   &:hover {
     background-color: ${theme.colors.darkBlue};
   }
