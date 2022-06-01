@@ -45,16 +45,7 @@ export const Slide = styled.div`
   background-size: cover;
   transition: all 0.5s linear;
 `;
-export const ImgContainer = styled.div`
-  height: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const Image = styled.img`
-  height: 80%;
-`;
+
 export const InfoContainer = styled.div`
   text-transform: uppercase;
   width: 40em;

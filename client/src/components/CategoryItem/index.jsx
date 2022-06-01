@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Image, Info, Title, Button } from "./CategoryItem.js";
+import { Container, Info, Title, Button } from "./CategoryItem.js";
 
 const CategoryItem = ({ item }) => {
   return (

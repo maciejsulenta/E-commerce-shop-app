@@ -4,22 +4,21 @@ import {
   ShoppingCartOutlined,
 } from "@material-ui/icons";
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Circle, Image, Info, Icon } from "./ProductItem";
+
+import { Container, Circle, Info, Icon, LinkS} from "./ProductItem";
 
 const ProductItem = ({ item }) => {
   return (
-    <Container>
+    <Container src={item.img}>
       <Circle />
-      <Image src={item.img} />
       <Info>
         <Icon>
           <ShoppingCartOutlined />
         </Icon>
         <Icon>
-          <Link to={`/products/${item._id}`}>
-          <SearchOutlined />
-          </Link>
+          <LinkS to={`/products/${item._id}`}>
+            <SearchOutlined />
+          </LinkS>
         </Icon>
         <Icon>
           <FavoriteBorderOutlined />

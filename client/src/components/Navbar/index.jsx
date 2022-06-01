@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { ShoppingCartOutlined } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import {
   Container,

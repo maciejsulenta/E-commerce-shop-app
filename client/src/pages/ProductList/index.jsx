@@ -7,7 +7,6 @@ import Newsletter from "../../components/Newsletter";
 import Products from "../../components/Products";
 import {
   Container,
-  Title,
   FilterContainer,
   Filter,
   FilterText,
