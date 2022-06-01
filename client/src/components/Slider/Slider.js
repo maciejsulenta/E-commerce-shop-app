@@ -43,7 +43,7 @@ export const Slide = styled.div`
   background-image: url(${(props) => props.src});
   background-color: ${(props) => props.bgc};
   background-size: cover;
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 `;
 export const ImgContainer = styled.div`
   height: 100%;
