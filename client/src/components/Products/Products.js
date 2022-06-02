@@ -7,5 +7,8 @@ export const Container = styled.div`
   column-gap: 3em;
   row-gap: 3em;
   padding: 3em;
-  /* background-color: cadetblue; */
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
 `;

@@ -17,4 +17,9 @@ export const Title = styled.h2`
   color: ${theme.colors.black};
   font-size: 3em;
   text-align: center;
+  padding: 0 2em;
+
+  @media screen and (max-width: 550px) {
+    font-size: 4em;
+  }
 `;
