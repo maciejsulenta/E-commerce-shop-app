@@ -1,48 +1,84 @@
 import styled from "styled-components";
+import { theme } from "../../utils/theme";
 
-export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/911254/pexels-photo-911254.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-      center;
-  background-size: cover;
+export const RegisterContainer = styled.div`
+  width: 100%;
+  height: calc(100vh - 90px);
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 export const Wrapper = styled.div`
-  width: 40%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: white;
+  width: 80%;
+  max-width: 900px;
+  height: 85%;
+  max-height: 900px;
+  padding: 2em;
+  border-radius: 2em;
+  background-color: ${theme.colors.platinum};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
 `;
 export const Title = styled.h1`
-  font-size: 24px;
+  font-size: 3em;
   font-weight: 300;
 `;
 export const Form = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 1em;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
 `;
 export const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 20px 10px 0 0;
-  padding: 10px;
+  font-size: 0.7em;
+  padding: 1.5em 8em 1.5em 1em;
+  border-radius: 1em;
+  border: 2px solid ${theme.colors.black};
+  outline: none;
+  font-family: ${theme.fonts};
+  transition: all 0.3s ease;
+  &:focus {
+    -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.8);
+  }
 `;
 export const Agreement = styled.p`
-  font-size: 12px;
-  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1em;
+  font-size: 0.6em;
 `;
 export const Button = styled.button`
-  width: 40%;
+  justify-self: center;
+  align-self: center;
+  font-size: 1em;
+  font-family: ${theme.fonts};
+  padding: 0.8em 2em;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
   border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
+  color: ${theme.colors.platinum};
+  background-color: ${theme.colors.blue};
   cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: ${theme.colors.darkBlue};
+  }
+  &:disabled {
+    background-color: brown;
+    color: ${theme.colors.white};
+    cursor: not-allowed;
+  }
 `;

@@ -15,7 +15,7 @@ export const Container = styled.div`
   color: ${theme.colors.black};
 `;
 export const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 0.8em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,8 +61,6 @@ export const Right = styled.div`
 export const MenuItem = styled.div`
   font-size: 0.8em;
   cursor: pointer;
-
-
 `;
 export const LinkS = styled(NavLink)`
   text-decoration: none;

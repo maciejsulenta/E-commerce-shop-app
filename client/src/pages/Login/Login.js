@@ -10,7 +10,6 @@ export const LoginContainer = styled.div`
 `;
 export const Left = styled.div`
   flex: 1;
-  /* background-color: brown; */
   height: 100%;
   background-image: url("https://i.ibb.co/3pF8w2Q/login.png");
   background-position: center;
