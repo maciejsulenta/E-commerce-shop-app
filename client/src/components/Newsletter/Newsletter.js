@@ -36,7 +36,7 @@ export const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 3px solid ${theme.colors.platinum};
-  border-radius: 2em;
+  border-radius: 1em;
   overflow: hidden;
 `;
 export const Input = styled.input`

@@ -3,7 +3,6 @@ import { theme } from "../../utils/theme";
 
 export const Container = styled.div`
   height: fit-content;
-  background-color: brown;
   padding: 1em;
   display: flex;
   justify-content: space-between;
