@@ -7,9 +7,10 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import { Title } from "../components/Categories/Categories";
+import { Container } from "../components/Container";
 const Home = () => {
   return (
-    <div>
+    <Container>
       <Announcement />
       <Navbar />
       <Slider />
@@ -18,7 +19,7 @@ const Home = () => {
       <Products />
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

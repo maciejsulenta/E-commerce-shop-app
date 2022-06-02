@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import { useSelector } from "react-redux";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Container,
   Wrapper,
@@ -11,12 +12,20 @@ import {
   Right,
   MenuItem,
   LinkS,
+  BurgerWrap,
+  BurgerContainer,
+  Burger,
 } from "./Navbar.js";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
 
+  const [isOpen, setisOpen] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
+
+  const setIsOpenHandler = () => {
+    setisOpen(!isOpen);
+  };
 
   const changeNav = () => {
     if (window.scrollY >= 60) {
@@ -28,6 +37,8 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
+
+    return () => window.removeEventListener("scroll", changeNav);
   }, []);
 
   return (
@@ -64,6 +75,14 @@ const Navbar = () => {
             </MenuItem>
           </LinkS>
         </Right>
+        <BurgerWrap>
+          <BurgerContainer onClick={setIsOpenHandler}>
+            <Burger isOpen={isOpen} />
+          </BurgerContainer>
+        </BurgerWrap>
+        <AnimatePresence>
+          {/* {isOpen && <MobileMenu setIsOpenHandler={setIsOpenHandler} />} */}
+        </AnimatePresence>
       </Wrapper>
     </Container>
   );

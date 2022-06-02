@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { mobile } from "../../utils/responsive";
 import { theme } from "../../utils/theme";
 
 export const Container = styled.div`
@@ -12,16 +11,24 @@ export const Container = styled.div`
   justify-content: center;
 `;
 export const Title = styled.h1`
-  font-size: 3.5em;
+  font-size: 3em;
   font-family: ${theme.fonts};
+  @media screen and (max-width: 550px) {
+    font-size: 4em;
+  }
 `;
 export const Desc = styled.p`
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 300;
   margin-bottom: 2em;
-  ${mobile({ textAlign: "center" })};
+  text-align: center;
+  padding: 0 4em;
+  @media screen and (max-width: 768px) {
+    font-size: 1.6em;
+  }
 `;
 export const InputContainer = styled.div`
+  min-width: 240px;
   width: 50%;
   max-width: 500px;
   height: 50px;
@@ -29,9 +36,8 @@ export const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 3px solid ${theme.colors.platinum};
-  border-radius: 2em;
+  border-radius: 1em;
   overflow: hidden;
-  ${mobile({ width: "80%" })};
 `;
 export const Input = styled.input`
   border: none;
@@ -40,6 +46,10 @@ export const Input = styled.input`
   outline: none;
   font-family: ${theme.fonts};
   color: ${theme.colors.black};
+
+  @media screen and (max-width: 550px) {
+    flex: 7;
+  }
 `;
 export const Button = styled.button`
   flex: 1;
@@ -51,5 +61,8 @@ export const Button = styled.button`
   &:hover {
     background-color: ${theme.colors.platinum};
     color: ${theme.colors.black};
+  }
+  @media screen and (max-width: 550px) {
+    flex: 2;
   }
 `;
