@@ -1,12 +1,16 @@
 import styled from "styled-components";
-import { mobile } from "../../utils/responsive";
 import { theme } from "../../utils/theme";
 
 export const Container = styled.div`
+  height: fit-content;
+  background-color: brown;
   padding: 1em;
   display: flex;
   justify-content: space-between;
-  ${mobile({ padding: "0px", flexDirection: "column" })};
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h2`

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { mobile } from "../../utils/responsive";
 import { theme } from "../../utils/theme";
 
 export const Container = styled.div`
@@ -7,7 +6,6 @@ export const Container = styled.div`
   background-color: ${theme.colors.white};
   display: flex;
   align-items: flex-start;
-  ${mobile({ flexDirection: "column" })};
 `;
 export const Left = styled.div`
   flex: 1;
@@ -17,6 +15,9 @@ export const Left = styled.div`
   align-items: center;
   padding: 1em 2em;
   text-align: center;
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
 `;
 export const Logo = styled.span`
   width: fit-content;
@@ -62,7 +63,9 @@ export const Center = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  ${mobile({ display: "none" })};
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export const Title = styled.h3`
   font-size: 1.5em;
@@ -94,7 +97,6 @@ export const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  ${mobile({ backgroundColor: "#fff8f8" })};
 `;
 export const ContactWrap = styled.div`
   display: flex;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { mobile } from "../../utils/responsive";
 import { theme } from "../../utils/theme";
 export const Container = styled.div`
   flex: 1;
   margin: 2em;
+  min-height: 300px;
   height: 60vh;
   position: relative;
   background-image: url(${(props) => props.src});
@@ -16,16 +16,29 @@ export const Container = styled.div`
   &:hover {
     transform: skew(0.5deg, -0.5deg) scale(1.01);
   }
+  @media screen and (max-width: 768px) {
+    width: 50%;
+    aspect-ratio: 1/1.2;
+  }
+  @media screen and (max-width: 550px) {
+    width: 70%;
+  }
 `;
 
 export const Title = styled.h1`
+  font-size: 1.5em;
   color: ${theme.colors.platinum};
   font-family: inherit;
   transition: all 0.3s ease;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.5em;
+  }
 `;
 
 export const Button = styled.button`
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: inherit;
   padding: 1em 2em;
   margin: 2em 0;
@@ -38,6 +51,9 @@ export const Button = styled.button`
   &:hover {
     background-color: ${theme.colors.blue} !important;
     color: ${theme.colors.platinum};
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1.5em;
   }
 `;
 

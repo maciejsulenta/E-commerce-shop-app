@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { mobile } from "../../utils/responsive";
 import { theme } from "../../utils/theme";
 
 export const Container = styled.div`
@@ -34,6 +33,10 @@ export const Arrow = styled.div`
     background-color: ${theme.colors.blue};
     color: ${theme.colors.white};
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export const Slide = styled.div`
   width: 100vw;
@@ -44,6 +47,10 @@ export const Slide = styled.div`
   background-color: ${(props) => props.bgc};
   background-size: cover;
   transition: all 0.5s linear;
+
+  @media screen and (max-width: 1280px) {
+    background-position: 50%;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -54,6 +61,9 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  @media screen and (max-width: 768px) {
+    margin-left: 5em;
+  }
 `;
 export const Title = styled.h1`
   font-size: 4em;

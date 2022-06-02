@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { mobile } from "../../utils/responsive";
 import { theme } from "../../utils/theme";
 
 export const Container = styled.div`
@@ -12,14 +11,14 @@ export const Container = styled.div`
   justify-content: center;
 `;
 export const Title = styled.h1`
-  font-size: 3.5em;
+  font-size: 3em;
   font-family: ${theme.fonts};
 `;
 export const Desc = styled.p`
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 300;
   margin-bottom: 2em;
-  ${mobile({ textAlign: "center" })};
+  text-align: center;
 `;
 export const InputContainer = styled.div`
   width: 50%;
@@ -31,7 +30,6 @@ export const InputContainer = styled.div`
   border: 3px solid ${theme.colors.platinum};
   border-radius: 2em;
   overflow: hidden;
-  ${mobile({ width: "80%" })};
 `;
 export const Input = styled.input`
   border: none;
