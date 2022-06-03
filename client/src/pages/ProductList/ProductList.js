@@ -1,16 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../utils/theme";
 
-export const Container = styled.div``;
 export const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: ${theme.colors.platinum}; */
   padding: 1em 2em;
 `;
 export const Filter = styled.div`
-  /* background-color: blue; */
   display: flex;
   align-items: center;
   gap: 1em;
