@@ -5,8 +5,8 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Newsletter from "../../components/Newsletter";
 import Products from "../../components/Products";
+import { Container } from "../../components/Container";
 import {
-  Container,
   FilterContainer,
   Filter,
   FilterText,
@@ -30,13 +30,14 @@ const ProductList = () => {
 
   return (
     <Container>
-      <Navbar />
       <Announcement />
+      <Navbar />
+
       <FilterContainer>
         <Filter>
           <FilterText>Filtruj produkty:</FilterText>
-          <Select name="color" onChange={handleFilters}>
-            <Option disabled defaultValue>
+          <Select name="color" onChange={handleFilters} defaultValue={"kolor"}>
+            <Option disabled value="kolor">
               Kolor
             </Option>
             <Option value="white">biały</Option>
@@ -45,8 +46,8 @@ const ProductList = () => {
             <Option value="green">zielony</Option>
             <Option value="blue">niebieski</Option>
           </Select>
-          <Select name="size" onChange={handleFilters}>
-            <Option disabled defaultValue>
+          <Select name="size" onChange={handleFilters} defaultValue={"rozmiar"}>
+            <Option disabled value={"rozmiar"}>
               Rozmiar
             </Option>
             <Option>XS</Option>
@@ -59,13 +60,16 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Sortuj produkty:</FilterText>
-          <Select onChange={(e) => setSort(e.target.value)}>
-            <Option value="najnowsze">Najnowsze</Option>
+          <Select onChange={(e) => setSort(e.target.value)} defaultValue={"najnowsze"}>
+            <Option value="najnowsze">
+              Najnowsze
+            </Option>
             <Option value="rosnaco">Cena rosnąco</Option>
             <Option value="malejaco">Cena malejąco</Option>
           </Select>
         </Filter>
       </FilterContainer>
+
       <Products cat={cat} filter={filter} sort={sort} />
       <Newsletter />
       <Footer />

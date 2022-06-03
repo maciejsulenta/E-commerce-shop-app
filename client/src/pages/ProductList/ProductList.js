@@ -1,20 +1,31 @@
 import styled from "styled-components";
+import { theme } from "../../utils/theme";
 
 export const Container = styled.div``;
 export const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* background-color: ${theme.colors.platinum}; */
+  padding: 1em 2em;
 `;
 export const Filter = styled.div`
-  margin: 20px;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  gap: 1em;
 `;
 export const FilterText = styled.span`
-  font-size: 20px;
+  font-size: 1em;
   font-weight: 600;
-  margin-right: 20px;
 `;
 export const Select = styled.select`
-  padding: 10px;
-  margin-right: 20px;
+  padding: 1em;
+  font-family: ${theme.fonts};
+  border-radius: 1em;
+  color: ${theme.colors.black};
 `;
-export const Option = styled.option``;
+export const Option = styled.option`
+  border-radius: 1em;
+  width: 80%;
+`;
