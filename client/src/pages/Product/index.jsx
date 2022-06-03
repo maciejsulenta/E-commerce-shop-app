@@ -94,9 +94,15 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove onClick={() => handleQuantity("mniej")} />
+              <Remove
+                style={{ cursor: "pointer" }}
+                onClick={() => handleQuantity("mniej")}
+              />
               <Amount>{quantity}</Amount>
-              <Add onClick={() => handleQuantity("wiecej")} />
+              <Add
+                style={{ cursor: "pointer" }}
+                onClick={() => handleQuantity("wiecej")}
+              />
             </AmountContainer>
             <Button onClick={handleClick}>Dodaj do koszyka</Button>
           </AddContainer>
