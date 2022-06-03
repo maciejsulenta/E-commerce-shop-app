@@ -83,6 +83,10 @@ export const FilterColor = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.color};
   cursor: pointer;
+  transition: all 0.1s ease;
+  &:active {
+    transform: scale(1.2);
+  }
 `;
 export const FilterSize = styled.select`
   flex: 1;
@@ -91,6 +95,7 @@ export const FilterSize = styled.select`
   padding: 1em 0 1em 1em;
   border: none;
   border-radius: 1em;
+  cursor: pointer;
 `;
 export const FilterSizeOption = styled.option``;
 export const AddContainer = styled.div`
