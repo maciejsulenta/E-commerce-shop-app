@@ -11,4 +11,8 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);
   }
+  @media screen and (max-width: 1280px) {
+    column-gap: 1.5em;
+    row-gap: 1.5em;
+  }
 `;
