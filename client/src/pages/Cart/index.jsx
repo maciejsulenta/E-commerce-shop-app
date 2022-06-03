@@ -5,10 +5,10 @@ import Announcement from "../../components/Announcement";
 import Footer from "../../components/Footer";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import { Add, Remove } from "@material-ui/icons";
 import { userRequest } from "../../utils/requestMethods";
+import { Container } from "../../components/Container";
+import { Add, Remove } from "@material-ui/icons";
 import {
-  Container,
   Wrapper,
   Title,
   Top,
@@ -36,6 +36,7 @@ import {
   SummaryItemText,
   SummaryItemPrice,
   Button,
+  AmountButton,
 } from "./Cart";
 
 const KEY = process.env.REACT_APP_STRIPE;
@@ -63,8 +64,8 @@ const Cart = () => {
   }, [stripeToken, cart.total, history]);
   return (
     <Container>
-      <Navbar />
       <Announcement />
+      <Navbar />
       <Wrapper>
         <Title>Twój koszyk</Title>
         <Top>
@@ -98,35 +99,38 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <AmountButton>
+                      <Add />
+                    </AmountButton>
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
+                    <AmountButton>
+                      <Remove />
+                    </AmountButton>
                   </ProductAmountContainer>
                   <ProductPrice>
-                    {product.price * product.quantity}zl
+                    {product.price * product.quantity} zł
                   </ProductPrice>
                 </PriceDetail>
               </Product>
             ))}
-            <Line />
           </Info>
           <Summary>
-            <SummaryTitle>Podsumowanie zamówienia:</SummaryTitle>
+            <Title>Podsumowanie zamówienia</Title>
             <SummaryItem>
               <SummaryItemText>Wartość zamówienia:</SummaryItemText>
-              <SummaryItemPrice>{cart.total} zl</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} zł</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Przesyłka</SummaryItemText>
-              <SummaryItemPrice>12 zl</SummaryItemPrice>
+              <SummaryItemPrice>12 zł</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Kod promocyjny</SummaryItemText>
-              <SummaryItemPrice>-12 zl</SummaryItemPrice>
+              <SummaryItemPrice>-12 zł</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="price">
               <SummaryItemText>Do zapłaty:</SummaryItemText>
-              <SummaryItemPrice>{cart.total} zl</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} zł</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="sklepik"
