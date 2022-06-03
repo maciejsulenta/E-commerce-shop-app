@@ -6,6 +6,11 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1em 2em;
+  
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 1em;
+  }
 `;
 export const Filter = styled.div`
   display: flex;
@@ -15,6 +20,10 @@ export const Filter = styled.div`
 export const FilterText = styled.span`
   font-size: 1em;
   font-weight: 600;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export const Select = styled.select`
   padding: 1em;
