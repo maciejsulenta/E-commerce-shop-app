@@ -3,8 +3,8 @@ import Navbar from "../../components/Navbar";
 import Announcement from "../../components/Announcement";
 import Newsletter from "../../components/Newsletter";
 import Footer from "../../components/Footer";
+import { Container } from "../../components/Container";
 import {
-  Container,
   Wrapper,
   ImgContainer,
   Image,
@@ -15,6 +15,7 @@ import {
   FilterContainer,
   Filter,
   FilterTitle,
+  ColorsWrap,
   FilterColor,
   FilterSize,
   FilterSizeOption,
@@ -22,6 +23,7 @@ import {
   AmountContainer,
   Amount,
   Button,
+  ImageContainer,
 } from "./Product";
 import { Add, Remove } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
@@ -58,28 +60,28 @@ const Product = () => {
 
   const handleClick = () => {
     //update cart
-    dispatch(
-      addProduct({ ...product, quantity, color, size })
-    );
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
   return (
     <Container>
-      <Navbar />
       <Announcement />
+      <Navbar />
       <Wrapper>
-        <ImgContainer>
+        <ImageContainer>
           <Image src={product.img} />
-        </ImgContainer>
+        </ImageContainer>
         <InfoContainer>
           <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
-          <Price>{product.price} zl</Price>
+          <Price>{product.price} zł</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Kolor</FilterTitle>
-              {product.color?.map((c) => (
-                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
-              ))}
+              <ColorsWrap>
+                {product.color?.map((c) => (
+                  <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+                ))}
+              </ColorsWrap>
             </Filter>
             <Filter>
               <FilterTitle>Rozmiar</FilterTitle>
